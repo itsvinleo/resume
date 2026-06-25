@@ -156,6 +156,22 @@ $endif$
 	\smallbreak
 	$endif$
 	
+	$if(experience)$
+	\heading{EXPERIENCE}
+	\medbreak
+	$for(experience)$
+	\begin{paracol}{2}\itemheading{$experience.company$}\ {\footnotesize$if(experience.github)$\href{$experience.github$}{\faGithub}$endif$\ $if(experience.website)$\href{$experience.website$}{\faGlobe}$endif$}\\\subheading{$experience.position$}\switchcolumn{\monthyear{Singapore}\\\monthyear{$experience.year$}}\end{paracol}
+	\begin{itemize}[itemsep=-0.3ex, topsep=0ex]
+		$for(experience.description)$
+		\item {$experience.description$}
+		$endfor$
+	\end{itemize}
+	\smallbreak
+	$endfor$
+
+	\medbreak
+	$endif$
+	
 	$if(education)$
 	\heading{EDUCATION}
 	\medbreak
@@ -170,27 +186,11 @@ $endif$
 	\smallbreak
 	$endfor$
 
-	\smallbreak
-	$endif$
-	
-	$if(experience)$
-	\heading{EXPERIENCE}
 	\medbreak
-	$for(experience)$
-	\begin{paracol}{2}\itemheading{$experience.company$}\ {\footnotesize$if(experience.github)$\href{$experience.github$}{\faGithub}$endif$\ $if(experience.website)$\href{$experience.website$}{\faGlobe}$endif$}\\\subheading{$experience.position$}\switchcolumn{\monthyear{Singapore}\\\monthyear{$experience.year$}}\end{paracol}
-	\begin{itemize}[itemsep=-0.3ex, topsep=0ex]
-		$for(experience.description)$
-		\item {$experience.description$}
-		$endfor$
-	\end{itemize}
-	\smallbreak
-	$endfor$
-
-	\smallbreak
 	$endif$
 	
 	$if(projects)$
-	\heading{PROJECTS \& COMPETITIONS}
+	\heading{PROJECTS \& INVOLVEMENT}
 	\medbreak
 	$for(projects)$
 	\begin{paracol}{2}\itemheading{$projects.name$} {\footnotesize$if(projects.github)$\href{$projects.github$}{\faGithub}$endif$ $if(projects.website)$\href{$projects.website$}{\faGlobe}$endif$}\\\subheading{$projects.company$}\switchcolumn{\monthyear{Singapore}\\\monthyear{$projects.year$}}\end{paracol}
@@ -202,7 +202,7 @@ $endif$
 	\smallbreak
 	$endfor$
 
-	\smallbreak
+	\medbreak
 	$endif$
 
 	$if(cca)$
@@ -235,7 +235,7 @@ $endif$
 	\smallbreak
 	$if(others)$
 	\heading{ADDITIONAL INFORMATION}
-	\medbreak
+	\smallbreak
 	\begin{itemize}[itemsep=-0.3ex, topsep=0ex]
 		$for(others)$
 		\item {$others$}
